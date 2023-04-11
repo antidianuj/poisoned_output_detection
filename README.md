@@ -13,7 +13,10 @@ The similarity metric model compares the similarity of $G_i$ with G to compute s
 
 In my demo of study like approach, I consider CIFAR-10 trained model as original model, and tried to reproduce the above study apporach by making the augmentor model approximate image and center cropped image. Making the similarity model as a simple cosine similarity function. And i didnt made the final classifier model, because it is my study, not a paper.
 
-The main_model.ipynb point out towards poisoned model create and calculating the similarity profile. The "better_pure_model.ipynb" referes to create a non-poisoned model. The "augmentor.ipynb" creates the augmentor model, that fundamentally excerises robustness by generating querries similar to original querry to original model.
+The main_model.ipynb point out towards poisoned model create and calculating the similarity profile. The "better_pure_model.ipynb" referes to create a non-poisoned model. The "augmentor.ipynb" creates the augmentor model, that fundamentally excerises robustness by generating querries similar to original querry to original model. Following is a sample input-output comparison of this augmentor model.
+
+![image](https://user-images.githubusercontent.com/47445756/231302136-8c53ba91-81e5-4e5d-a1f5-8f58df8dc4f7.png)
+
 
 The comaprison of similarity profiles of poisoned and non-poisoned model can be shown below.
 
