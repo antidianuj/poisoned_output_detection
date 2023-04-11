@@ -6,7 +6,7 @@ Here is my immediate theory of constructing a blackbox methodology to detect poi
 
 
 For a given model, that takes an input S (can be image or text) and outputs G (can be image, text or probability vector) .The methodology would be to add two different small-scale models (as shown in below figure) over this LLM:
-Top model augments the original sentence, so that the meaning of the sentence is same, but increases the length of the sentence. This augmented original sentence S_1 is fed into the LLM to produce grammatically correct sentence again. Let’s call it G_1  . In this way we keep of creating augmenting random sentences into original sentences to form a aggregate set {S_i }_(i>0). The grammatically correct sentence is {G_i }_(i>0).
+Top model augments the original sentence, so that the meaning of the sentence is same, but increases the length of the sentence. This augmented original sentence S_1 is fed into the LLM to produce grammatically correct sentence again. Let’s call it $G_1$  . In this way we keep of creating augmenting random sentences into original sentences to form a aggregate set {S_i }_(i>0). The grammatically correct sentence is {G_i }_(i>0).
 Bottom model compares the similarity of G_i with G to compute similarity score τ_i. Then the mean and standard deviation of the set {τ_i }_(i>0) is calculated. If the mean and standard deviation are below certain thresholds, then the G does not contains poisoned parts, otherwise it contains poisoned parts.
 
 
