@@ -11,7 +11,11 @@ The augmentor model augments the input data (possibly image), so that the image 
 The similarity metric model compares the similarity of $G_i$ with G to compute similarity score $τ_i$. In this way the similarity profile is create as a time series. The similarity metric model can be as simple as a cosine similarity (if the output of original model is probability vector) or embedding of pretrained models (in case of image or textual output). Then the mean and standard deviation of the set ${τ_i }_{i>0}$ is calculated. If the mean and standard deviation are below certain thresholds, then the G does not contains poisoned parts, otherwise it contains poisoned parts.
 
 
-In my demo of study like approach, I consider CIFAR-10 trained model as original model, and tried to reproduce the above study apporach by making the augmentor model approximate image and center cropped image. Making the similarity model as a simple cosine similarity function. And i didnt made the final classifier model, because it is my study, not a paper. The comaprison of similarity profiles of poisoned and non-poisoned model can be shown below.
+In my demo of study like approach, I consider CIFAR-10 trained model as original model, and tried to reproduce the above study apporach by making the augmentor model approximate image and center cropped image. Making the similarity model as a simple cosine similarity function. And i didnt made the final classifier model, because it is my study, not a paper.
+
+The main_model.ipynb point out towards poisoned model create and calculating the similarity profile. The "better_pure_model.ipynb" referes to create a non-poisoned model. The "augmentor.ipynb" creates the augmentor model, that fundamentally excerises robustness by generating querries similar to original querry to original model.
+
+The comaprison of similarity profiles of poisoned and non-poisoned model can be shown below.
 
 ![image](https://user-images.githubusercontent.com/47445756/231301494-8f356b8f-048b-4f97-9885-8883c61e0dd1.png)
 
